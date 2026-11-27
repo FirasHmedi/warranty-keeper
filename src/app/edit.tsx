@@ -19,10 +19,10 @@ import { notify } from '../components/confirm';
 import { DateField } from '../components/DateField';
 import { useItem } from '../data/store';
 import { type Item, newId } from '../data/types';
-import { formatDate, t } from '../i18n';
+import { formatDate, locale, t } from '../i18n';
 import { type TranslationKey } from '../i18n/en';
 import { isValidISODate } from '../lib/dates';
-import { parseMonths, parsePrice } from '../lib/format';
+import { formatPrice, parseMonths, parsePrice, priceToInput } from '../lib/format';
 import { type DraftError, validateDraft } from '../lib/validate';
 import { MONTH_PRESETS, isValidMonths, todayISO, warrantyEndDate } from '../lib/warranty';
 import { saveItem } from '../services/items';
@@ -55,7 +55,7 @@ function ItemForm({ initial }: { initial: Item | null }) {
   const [purchaseDate, setPurchaseDate] = useState(initial?.purchaseDate ?? todayISO());
   const [preset, setPreset] = useState<number | 'custom'>(isPreset ? initialMonths : 'custom');
   const [customMonths, setCustomMonths] = useState(isPreset ? '' : String(initialMonths));
-  const [price, setPrice] = useState(initial?.price != null ? String(initial.price) : '');
+  const [price, setPrice] = useState(initial?.price != null ? priceToInput(initial.price, locale) : '');
   const [notes, setNotes] = useState(initial?.notes ?? '');
   const [receiptUri, setReceiptUri] = useState<string | null>(initial?.receiptUri ?? null);
   const [reminders, setReminders] = useState(initial?.remindersEnabled ?? false);
@@ -140,7 +140,9 @@ function ItemForm({ initial }: { initial: Item | null }) {
   };
 
   const err = (e: DraftError) =>
-    errors.includes(e) ? <Text style={styles.error}>{t(ERROR_TEXT[e])}</Text> : null;
+    errors.includes(e) ? (
+      <Text style={styles.error}>{t(ERROR_TEXT[e], { example: formatPrice(129.9, locale) })}</Text>
+    ) : null;
 
   return (
     <KeyboardAvoidingView style={{ flex: 1 }} behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
@@ -220,7 +222,7 @@ function ItemForm({ initial }: { initial: Item | null }) {
           <TextInput
             value={price}
             onChangeText={setPrice}
-            placeholder="0,00"
+            placeholder={formatPrice(0, locale)}
             placeholderTextColor={theme.muted}
             keyboardType="decimal-pad"
             style={styles.input}

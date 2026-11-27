@@ -55,7 +55,7 @@ const en = {
   errNameRequired: 'Enter a name.',
   errDateInvalid: 'Enter a valid date (YYYY-MM-DD).',
   errMonthsInvalid: 'Enter a number of months between 1 and 600.',
-  errPriceInvalid: 'Enter a price like 129.90.',
+  errPriceInvalid: 'Enter a price like {example}.',
   permNotifTitle: 'Notifications are off',
   permNotifText: 'Allow notifications for this app in your phone settings to get reminders.',
   permCameraTitle: 'Camera not allowed',

@@ -57,7 +57,7 @@ const fr: Translations = {
   errNameRequired: 'Indiquez un nom.',
   errDateInvalid: 'Indiquez une date valide (AAAA-MM-JJ).',
   errMonthsInvalid: 'Indiquez un nombre de mois entre 1 et 600.',
-  errPriceInvalid: 'Indiquez un prix comme 129,90.',
+  errPriceInvalid: 'Indiquez un prix comme {example}.',
   permNotifTitle: 'Notifications désactivées',
   permNotifText: 'Autorisez les notifications de l’app dans les réglages du téléphone pour recevoir les rappels.',
   permCameraTitle: 'Appareil photo non autorisé',
