@@ -2,7 +2,7 @@ import { useColorScheme } from 'react-native';
 
 import type { WarrantyStatus } from './lib/warranty';
 
-const light = {
+export const light = {
   background: '#F7F6F2',
   surface: '#FFFFFF',
   text: '#1C1C1A',
@@ -18,7 +18,7 @@ const light = {
   } as Record<WarrantyStatus, { fg: string; bg: string }>,
 };
 
-const dark: typeof light = {
+export const dark: typeof light = {
   background: '#121211',
   surface: '#1E1E1C',
   text: '#EDECE6',

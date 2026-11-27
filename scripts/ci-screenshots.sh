@@ -215,9 +215,57 @@ W=${SIZE%x*}
 H=${SIZE#*x}
 log "screen ${W}x${H}"
 
+# Home-screen widget, best effort: long-press the home screen, open the widget
+# picker, find the app's widget and drag it onto the home screen.
+add_widget() {
+  adb shell input keyevent KEYCODE_HOME
+  sleep 3
+  adb shell input swipe $((W / 2)) $((H * 45 / 100)) $((W / 2)) $((H * 45 / 100)) 1500
+  sleep 2
+  tap text "Widgets" || return 1
+  sleep 3
+  local label pos="" i
+  # The picker lists apps by name; open "Garanties", then drag its widget preview.
+  tap text "Garanties" || { cp "$UI" "$OUT/widget-picker.xml"; return 1; }
+  sleep 2
+  for i in 1 2 3; do
+    dump || return 1
+    for label in "Prochaine garantie à finir" "Next warranty to expire"; do
+      if pos=$(find_node text "$label"); then break 2; fi
+    done
+    pos=""
+    adb shell input swipe $((W / 2)) $((H * 70 / 100)) $((W / 2)) $((H * 40 / 100)) 300
+    sleep 1
+  done
+  [ -n "$pos" ] || { cp "$UI" "$OUT/widget-picker.xml"; echo "widget not in picker"; return 1; }
+  # The preview sits just above its label.
+  local x=${pos% *} y=${pos#* }
+  y=$((y - 150))
+  adb shell input draganddrop "$x" "$y" $((W / 2)) $((H * 40 / 100)) 2500 || \
+    adb shell input swipe "$x" "$y" $((W / 2)) $((H * 40 / 100)) 2500
+  sleep 6
+  shot "widget-home"
+  adb shell cmd uimode night yes
+  sleep 5
+  shot "widget-home-dark"
+  adb shell cmd uimode night no
+  sleep 2
+  adb shell dumpsys appwidget | grep -iA3 "nextwarranty" > "$OUT/appwidget-bound.txt" || true
+}
+
 STATUS=0
 run_language en || { echo "English run failed"; STATUS=1; }
 run_language fr || { echo "French run failed"; STATUS=1; }
+
+# The widget provider must be registered with the system.
+adb shell dumpsys appwidget > "$OUT/appwidget.txt" || true
+if grep -q "warranty.widget.NextWarranty" "$OUT/appwidget.txt"; then
+  log "widget provider registered"
+else
+  echo "Widget provider com.pomwik.warranty/.widget.NextWarranty not listed by dumpsys appwidget"
+  STATUS=1
+fi
+add_widget || echo "Could not add the widget to the home screen (optional step)"
 rm -f "$UI"
 
 adb logcat -d -s ReactNativeJS:V AndroidRuntime:E > "$OUT/logcat.txt" || true

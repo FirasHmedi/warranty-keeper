@@ -6,12 +6,15 @@ import { useColorScheme } from 'react-native';
 import { t } from '../i18n';
 import { setupNotificationHandler } from '../services/reminders';
 import { useTheme } from '../theme';
+import { refreshWidgets } from '../widget/update';
 
 export default function RootLayout() {
   const theme = useTheme();
   const scheme = useColorScheme();
   useEffect(() => {
     setupNotificationHandler();
+    // Days left change every day: redraw the home-screen widget whenever the app opens.
+    refreshWidgets();
   }, []);
   return (
     <>
