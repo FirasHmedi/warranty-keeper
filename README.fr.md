@@ -21,6 +21,7 @@ Les anciens aperçus web (`expo export --platform web`) restent dans `docs/scree
 - Photo du ticket facultative, prise avec l’appareil photo ou choisie dans la galerie, copiée dans le stockage privé de l’app.
 - Rappels facultatifs : une notification locale 30 jours avant la fin et le jour de la fin (à 9 h). L’autorisation n’est demandée qu’à l’activation des rappels.
 - Recherche par nom ou magasin, filtre par statut.
+- Widget d’écran d’accueil « Prochaine garantie à finir » : les 1 à 3 prochaines garanties en cours avec les jours restants (clair et sombre). Un appui ouvre l’app. Il est redessiné après chaque modification, à l’ouverture de l’app et toutes les 6 heures.
 - Français et anglais (selon la langue du téléphone), thème clair et sombre.
 
 ## Confidentialité
