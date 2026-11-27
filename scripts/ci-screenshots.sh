@@ -153,8 +153,8 @@ run_language() {
     STORE_PH="Où vous l’avez acheté"; PRICE_PH="0,00"; P12="12 mois"; P24="24 mois"; EMPTY="Aucun article"
   else
     TAG=en-GB
-    ADD="Add item"; DATE_LABEL="Purchase date"; SAVE="Save"; NAME_PH="E.g. washing machine"
-    STORE_PH="Where you bought it"; PRICE_PH="0.00"; P12="12 months"; P24="24 months"; EMPTY="No items yet"
+    ADD="Add item"; DATE_LABEL="Purchase date"; SAVE="Save"; NAME_PH="e.g. Washing machine"
+    STORE_PH="Where you bought it"; PRICE_PH="0.00"; P12="12 mo"; P24="24 mo"; EMPTY="No items yet"
   fi
   adb shell pm clear "$PKG" >/dev/null
   adb shell cmd uimode night no
@@ -182,7 +182,7 @@ run_language() {
   if [ "$lang" = fr ]; then
     add_item "$ADD" "$DATE_LABEL" "Lave-linge" "Magasin du centre" 0 1 "$P24" "549,90" "$SAVE" || return 1
     add_item "$ADD" "$DATE_LABEL" "Casque audio" "Boutique en ligne" 11 15 "$P12" "89" "$SAVE" || return 1
-    add_item "$ADD" "$DATE_LABEL" "Cafetiere" "Supermarche" 14 3 "$P12" "39,99" "$SAVE" || return 1
+    add_item "$ADD" "$DATE_LABEL" "Bouilloire" "Grande surface" 14 3 "$P12" "39,99" "$SAVE" || return 1
   else
     add_item "$ADD" "$DATE_LABEL" "Washing machine" "High street store" 0 1 "$P24" "549.90" "$SAVE" || return 1
     add_item "$ADD" "$DATE_LABEL" "Headphones" "Online shop" 11 15 "$P12" "89" "$SAVE" || return 1
