@@ -6,11 +6,13 @@ A small Android app to keep track of what you bought and when each warranty ends
 
 ## Screenshots
 
-Web preview (rendered from the same code with `expo export --platform web` and sample data; Android screenshots will come from CI):
+Taken on an Android emulator (API 34, 1080x2400) by the CI workflow, with sample items typed in through the app:
 
-| List | Details | Add item |
-| --- | --- | --- |
-| ![List](docs/screenshots/en-1-list.png) | ![Details](docs/screenshots/en-2-details.png) | ![Add item](docs/screenshots/en-3-add.png) |
+| List | Details | Edit | Dark theme |
+| --- | --- | --- | --- |
+| ![List](docs/screenshots/android/en-3-list.png) | ![Details](docs/screenshots/android/en-4-details.png) | ![Edit](docs/screenshots/android/en-5-edit.png) | ![Dark theme](docs/screenshots/android/en-6-list-dark.png) |
+
+The older web previews (`expo export --platform web`) are kept in `docs/screenshots/` for reference.
 
 ## Features
 

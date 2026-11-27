@@ -6,11 +6,13 @@ Une petite app Android pour noter ce que vous achetez et la date de fin de chaqu
 
 ## Captures
 
-Aperçu web (même code rendu avec `expo export --platform web` et des données d’exemple ; les captures Android viendront de la CI) :
+Prises sur un émulateur Android (API 34, 1080x2400) par la CI, avec des articles d’exemple saisis dans l’app :
 
-| Liste | Détails | Ajout |
-| --- | --- | --- |
-| ![Liste](docs/screenshots/fr-1-list.png) | ![Détails](docs/screenshots/fr-2-details.png) | ![Ajout](docs/screenshots/fr-3-add.png) |
+| Liste | Détails | Modification | Thème sombre |
+| --- | --- | --- | --- |
+| ![Liste](docs/screenshots/android/fr-3-list.png) | ![Détails](docs/screenshots/android/fr-4-details.png) | ![Modification](docs/screenshots/android/fr-5-edit.png) | ![Thème sombre](docs/screenshots/android/fr-6-list-dark.png) |
+
+Les anciens aperçus web (`expo export --platform web`) restent dans `docs/screenshots/` pour référence.
 
 ## Fonctionnalités
 
