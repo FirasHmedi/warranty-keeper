@@ -1,0 +1,9 @@
+  [27] provider ProviderId{user:0, app:10192, cmp:ComponentInfo{com.pomwik.warranty/com.pomwik.warranty.widget.NextWarranty}}
+    min=(64001x28161)   minResize=(64001x28161) updatePeriodMillis=21600000 resizeMode=3 widgetCategory=1 autoAdvanceViewId=-1 initialLayout=#7f0b0073 initialKeyguardLayout=#0   zombie=false
+  [28] provider ProviderId{user:0, app:10156, cmp:ComponentInfo{com.google.android.apps.youtube.music/com.google.android.apps.youtube.music.player.widget.gm3.NowPlayingWidgetProvider}}
+    min=(71681x30721)   minResize=(64001x10241) updatePeriodMillis=1800000 resizeMode=3 widgetCategory=1 autoAdvanceViewId=-1 initialLayout=#7f0e0045 initialKeyguardLayout=#0   zombie=false
+--
+    provider=ProviderId{user:0, app:10192, cmp:ComponentInfo{com.pomwik.warranty/com.pomwik.warranty.widget.NextWarranty}}
+    host.callbacks=com.android.internal.appwidget.IAppWidgetHost$Stub$Proxy@6bbc021
+    views=android.widget.RemoteViews@d010c46
+ 
