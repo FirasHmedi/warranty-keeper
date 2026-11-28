@@ -6,11 +6,13 @@ Une petite app Android pour noter ce que vous achetez et la date de fin de chaqu
 
 ## Captures
 
-Aperçu web (même code rendu avec `expo export --platform web` et des données d’exemple ; les captures Android viendront de la CI) :
+Prises sur un émulateur Android (API 34, 1080x2400) par la CI, avec des articles d’exemple saisis dans l’app :
 
-| Liste | Détails | Ajout |
-| --- | --- | --- |
-| ![Liste](docs/screenshots/fr-1-list.png) | ![Détails](docs/screenshots/fr-2-details.png) | ![Ajout](docs/screenshots/fr-3-add.png) |
+| Liste | Détails | Modification | Thème sombre |
+| --- | --- | --- | --- |
+| ![Liste](docs/screenshots/android/fr-3-list.png) | ![Détails](docs/screenshots/android/fr-4-details.png) | ![Modification](docs/screenshots/android/fr-5-edit.png) | ![Thème sombre](docs/screenshots/android/fr-6-list-dark.png) |
+
+Les anciens aperçus web (`expo export --platform web`) restent dans `docs/screenshots/` pour référence.
 
 ## Fonctionnalités
 
@@ -19,6 +21,7 @@ Aperçu web (même code rendu avec `expo export --platform web` et des données 
 - Photo du ticket facultative, prise avec l’appareil photo ou choisie dans la galerie, copiée dans le stockage privé de l’app.
 - Rappels facultatifs : une notification locale 30 jours avant la fin et le jour de la fin (à 9 h). L’autorisation n’est demandée qu’à l’activation des rappels.
 - Recherche par nom ou magasin, filtre par statut.
+- Widget d’écran d’accueil « Prochaine garantie à finir » : les 1 à 3 prochaines garanties en cours avec les jours restants (clair et sombre). Un appui ouvre l’app. Il est redessiné après chaque modification, à l’ouverture de l’app et toutes les 6 heures.
 - Français et anglais (selon la langue du téléphone), thème clair et sombre.
 
 ## Confidentialité

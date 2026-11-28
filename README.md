@@ -6,11 +6,13 @@ A small Android app to keep track of what you bought and when each warranty ends
 
 ## Screenshots
 
-Web preview (rendered from the same code with `expo export --platform web` and sample data; Android screenshots will come from CI):
+Taken on an Android emulator (API 34, 1080x2400) by the CI workflow, with sample items typed in through the app:
 
-| List | Details | Add item |
-| --- | --- | --- |
-| ![List](docs/screenshots/en-1-list.png) | ![Details](docs/screenshots/en-2-details.png) | ![Add item](docs/screenshots/en-3-add.png) |
+| List | Details | Edit | Dark theme |
+| --- | --- | --- | --- |
+| ![List](docs/screenshots/android/en-3-list.png) | ![Details](docs/screenshots/android/en-4-details.png) | ![Edit](docs/screenshots/android/en-5-edit.png) | ![Dark theme](docs/screenshots/android/en-6-list-dark.png) |
+
+The older web previews (`expo export --platform web`) are kept in `docs/screenshots/` for reference.
 
 ## Features
 
@@ -19,6 +21,7 @@ Web preview (rendered from the same code with `expo export --platform web` and s
 - Optional receipt photo from the camera or the gallery, copied into the app’s private storage.
 - Optional reminders: a local notification 30 days before the end date and on the end date (9:00). Permission is asked only when you turn reminders on.
 - Search by name or store, filter by status.
+- Home-screen widget “Next warranty to expire”: the next 1 to 3 running warranties with the days left (light and dark). Tap it to open the app. It is redrawn after each change, when the app opens and every 6 hours.
 - French and English (follows the phone language), light and dark theme.
 
 ## Privacy

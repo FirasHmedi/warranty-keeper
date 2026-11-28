@@ -102,8 +102,12 @@ export default function ListScreen() {
               </Text>
               <Text style={[styles.sub, { color: theme.muted }]} numberOfLines={1}>
                 {t('endsOn', { date: formatDate(v.item.endDate) })}
-                {v.item.store ? ` · ${v.item.store}` : ''}
               </Text>
+              {v.item.store ? (
+                <Text style={[styles.sub, { color: theme.muted }]} numberOfLines={1}>
+                  {v.item.store}
+                </Text>
+              ) : null}
             </View>
             <View style={styles.rowSide}>
               <StatusBadge status={v.status} />

@@ -3,6 +3,7 @@ import { notifyChanged } from '../data/store';
 import type { Item } from '../data/types';
 import { deleteReceipt } from './receipts';
 import { cancelReminders, scheduleReminders } from './reminders';
+import { refreshWidgets } from '../widget/update';
 
 /**
  * Saves an item and keeps its notifications in sync: old reminders are always cancelled,
@@ -15,6 +16,7 @@ export async function saveItem(item: Item, previous: Item | null): Promise<void>
   await repository.upsert({ ...item, notificationIds, createdAt: item.createdAt || now, updatedAt: now });
   if (previous?.receiptUri && previous.receiptUri !== item.receiptUri) deleteReceipt(previous.receiptUri);
   notifyChanged();
+  refreshWidgets();
 }
 
 export async function deleteItem(item: Item): Promise<void> {
@@ -22,4 +24,5 @@ export async function deleteItem(item: Item): Promise<void> {
   await repository.remove(item.id);
   deleteReceipt(item.receiptUri);
   notifyChanged();
+  refreshWidgets();
 }

@@ -55,7 +55,7 @@ const en = {
   errNameRequired: 'Enter a name.',
   errDateInvalid: 'Enter a valid date (YYYY-MM-DD).',
   errMonthsInvalid: 'Enter a number of months between 1 and 600.',
-  errPriceInvalid: 'Enter a price like 129.90.',
+  errPriceInvalid: 'Enter a price like {example}.',
   permNotifTitle: 'Notifications are off',
   permNotifText: 'Allow notifications for this app in your phone settings to get reminders.',
   permCameraTitle: 'Camera not allowed',
@@ -65,12 +65,17 @@ const en = {
   notifEndTitle: 'Warranty ends today',
   notifEndBody: '{name}: last day to make a warranty claim.',
   notifChannel: 'Warranty reminders',
-  remindersOn: 'Reminders on',
-  remindersOff: 'Reminders off',
+  remindersOn: 'On',
+  remindersOff: 'Off',
   purchasedOn: 'Bought {date}',
   notFound: 'This item no longer exists.',
   back: 'Back',
   saveError: 'Could not save. Please try again.',
+  widgetTitle: 'Next warranty to expire',
+  widgetEmpty: 'No warranty running.',
+  widgetDaysLeft: '{n} days',
+  widgetOneDay: '1 day',
+  widgetToday: 'Today',
 } as const;
 
 export type TranslationKey = keyof typeof en;

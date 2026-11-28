@@ -57,7 +57,7 @@ const fr: Translations = {
   errNameRequired: 'Indiquez un nom.',
   errDateInvalid: 'Indiquez une date valide (AAAA-MM-JJ).',
   errMonthsInvalid: 'Indiquez un nombre de mois entre 1 et 600.',
-  errPriceInvalid: 'Indiquez un prix comme 129,90.',
+  errPriceInvalid: 'Indiquez un prix comme {example}.',
   permNotifTitle: 'Notifications désactivées',
   permNotifText: 'Autorisez les notifications de l’app dans les réglages du téléphone pour recevoir les rappels.',
   permCameraTitle: 'Appareil photo non autorisé',
@@ -67,12 +67,17 @@ const fr: Translations = {
   notifEndTitle: 'Fin de garantie aujourd’hui',
   notifEndBody: '{name} : dernier jour pour faire jouer la garantie.',
   notifChannel: 'Rappels de garantie',
-  remindersOn: 'Rappels activés',
-  remindersOff: 'Rappels désactivés',
+  remindersOn: 'Activés',
+  remindersOff: 'Désactivés',
   purchasedOn: 'Acheté le {date}',
   notFound: 'Cet article n’existe plus.',
   back: 'Retour',
   saveError: 'Enregistrement impossible. Réessayez.',
+  widgetTitle: 'Prochaine garantie à finir',
+  widgetEmpty: 'Aucune garantie en cours.',
+  widgetDaysLeft: '{n} jours',
+  widgetOneDay: '1 jour',
+  widgetToday: 'Aujourd’hui',
 };
 
 export default fr;
