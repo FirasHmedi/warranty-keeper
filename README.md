@@ -21,6 +21,7 @@ The older web previews (`expo export --platform web`) are kept in `docs/screensh
 - Optional receipt photo from the camera or the gallery, copied into the app’s private storage.
 - Optional reminders: a local notification 30 days before the end date and on the end date (9:00). Permission is asked only when you turn reminders on.
 - Search by name or store, filter by status.
+- Home-screen widget “Next warranty to expire”: the next 1 to 3 running warranties with the days left (light and dark). Tap it to open the app. It is redrawn after each change, when the app opens and every 6 hours.
 - French and English (follows the phone language), light and dark theme.
 
 ## Privacy

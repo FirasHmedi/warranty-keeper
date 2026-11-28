@@ -71,6 +71,11 @@ const en = {
   notFound: 'This item no longer exists.',
   back: 'Back',
   saveError: 'Could not save. Please try again.',
+  widgetTitle: 'Next warranty to expire',
+  widgetEmpty: 'No warranty running.',
+  widgetDaysLeft: '{n} days',
+  widgetOneDay: '1 day',
+  widgetToday: 'Today',
 } as const;
 
 export type TranslationKey = keyof typeof en;

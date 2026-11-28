@@ -73,6 +73,11 @@ const fr: Translations = {
   notFound: 'Cet article n’existe plus.',
   back: 'Retour',
   saveError: 'Enregistrement impossible. Réessayez.',
+  widgetTitle: 'Prochaine garantie à finir',
+  widgetEmpty: 'Aucune garantie en cours.',
+  widgetDaysLeft: '{n} jours',
+  widgetOneDay: '1 jour',
+  widgetToday: 'Aujourd’hui',
 };
 
 export default fr;
