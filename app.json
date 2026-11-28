@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Garanties",
+    "name": "Warranty Keeper",
     "slug": "warranty-keeper",
     "scheme": "warrantykeeper",
     "version": "1.1.0",
@@ -15,7 +15,7 @@
       "package": "com.pomwik.warranty",
       "versionCode": 2,
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#F6F5F1",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"
@@ -77,6 +77,7 @@
             {
               "name": "NextWarranty",
               "label": "@string/widget_next_warranty_label",
+              "description": "@string/widget_next_warranty_desc",
               "minWidth": "250dp",
               "minHeight": "110dp",
               "targetCellWidth": 4,

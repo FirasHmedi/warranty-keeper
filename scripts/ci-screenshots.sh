@@ -225,8 +225,9 @@ add_widget() {
   tap text "Widgets" || return 1
   sleep 3
   local label pos="" i
-  # The picker lists apps by name; open "Garanties", then drag its widget preview.
-  tap text "Garanties" || { cp "$UI" "$OUT/widget-picker.xml"; return 1; }
+  # The picker lists apps by name ("Garanties" in French, "Warranty Keeper" in English);
+  # open it, then drag its widget preview.
+  tap text "Garanties" || tap text "Warranty Keeper" || { cp "$UI" "$OUT/widget-picker.xml"; return 1; }
   sleep 2
   for i in 1 2 3; do
     dump || return 1
