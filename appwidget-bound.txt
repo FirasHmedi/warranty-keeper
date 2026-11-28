@@ -1,0 +1,9 @@
+  [28] provider ProviderId{user:0, app:10192, cmp:ComponentInfo{com.pomwik.warranty/com.pomwik.warranty.widget.NextWarranty}}
+    min=(64001x28161)   minResize=(64001x28161) updatePeriodMillis=21600000 resizeMode=3 widgetCategory=1 autoAdvanceViewId=-1 initialLayout=#7f0b0073 initialKeyguardLayout=#0   zombie=false
+ 
+Widgets:
+--
+    provider=ProviderId{user:0, app:10192, cmp:ComponentInfo{com.pomwik.warranty/com.pomwik.warranty.widget.NextWarranty}}
+    host.callbacks=com.android.internal.appwidget.IAppWidgetHost$Stub$Proxy@1a5e6bf
+    views=android.widget.RemoteViews@6aba18c
+ 
