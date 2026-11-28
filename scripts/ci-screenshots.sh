@@ -228,7 +228,10 @@ add_widget() {
   # The picker lists apps by name ("Garanties" in French, "Warranty Keeper" in English);
   # open it, then drag its widget preview.
   tap text "Garanties" || tap text "Warranty Keeper" || { cp "$UI" "$OUT/widget-picker.xml"; return 1; }
+  rm -f "$OUT"/missing-*.xml
   sleep 2
+  # Shows the launcher icon, the app name and the widget name in the picker.
+  shot "widget-picker"
   for i in 1 2 3; do
     dump || return 1
     for label in "Prochaine garantie à finir" "Next warranty to expire"; do
